@@ -14,16 +14,20 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var diceImageView2: UIImageView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+
+
+    @IBAction func rollButtonPressed(_ sender: UIButton) {
         
-        //Who.what = value
-        diceImageView1.image = UIImage(imageLiteralResourceName: "DiceSix")
+        let diceArray = [ #imageLiteral(resourceName: "DiceOne") , #imageLiteral(resourceName: "DiceTwo") , #imageLiteral(resourceName: "DiceThree") , #imageLiteral(resourceName: "DiceFour") , #imageLiteral(resourceName: "DiceFive") , #imageLiteral(resourceName: "DiceSix")  ]
         
-        diceImageView2.image = UIImage(imageLiteralResourceName: "DiceTwo")
-         
+        diceImageView1.image =  diceArray[Int.random(in: 0...5)]
+                                //diceArray.randomElement()도 가능하다
+        
+        diceImageView2.image = diceArray[Int.random(in: 0...5)]
+  
+        
+        
+        
     }
-
-
 }
 
